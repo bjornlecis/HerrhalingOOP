@@ -8,6 +8,7 @@ class Persoon:
         return f"Naam:{self.name} Woonplaats:{self.city}"
 
 
+
 p1 = Persoon("p1","Bert","Hasselt")
 p2 = Persoon("p2","Karolien","Genk")
 p3 = Persoon("p3","Mark","Hasselt")
