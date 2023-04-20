@@ -20,6 +20,7 @@ class Voertuig:
         Voertuig.aantal_voertuigen += 1
     def __str__(self):
         return f"id:\t{self.id}\ndagprijs:\t{self.dagprijs}"
+        return
     def toon_info(self):
         return self.id
 class Motorbike(Voertuig):
@@ -52,10 +53,11 @@ class Auto(Voertuig):
 
 class Verhuring:
 
-    def __init__(self,verhuur_id,voertuig,persoon):
+    def __init__(self,verhuur_id,voertuig,persoon,dagen):
         self.verhuur_id = verhuur_id
         self.voertuig = voertuig
         self.persoon = persoon
+        self.dagen = dagen
     def __str__(self):
         return f"Verhuur_id:\t{self.verhuur_id}\nvoortuig:\t{self.voertuig.toon_info()}\nPersoon:\t{self.persoon.naam}"
 
@@ -71,9 +73,9 @@ v4 = Motorbike(50,"Ducati","Streetfighter",2004)
 v5 = Motorbike(75,"Harley","Davidson",2010)
 v6 = Auto(65,"Suzuki","Wagon",2004)
 
-vh1 = Verhuring("ver1",v4,p1)
-vh2 = Verhuring("ver2",v5,p2)
-vh3 = Verhuring("ver3",v3,p2)
+vh1 = Verhuring("ver1",v4,p1,5)
+vh2 = Verhuring("ver2",v5,p2,3)
+vh3 = Verhuring("ver3",v3,p2,4)
 
 lijst_per = [p1,p2]
 lijst_voertuigen = [v1,v2,v3,v4,v5,v6]
