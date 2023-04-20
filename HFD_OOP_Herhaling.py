@@ -9,6 +9,8 @@ def toon_menu_data():
     print("2: alle voertuigen")
     print("3: alle verhuringen")
     print("4: Toon alle verhuringen met prijs en totaalprijs")
+    print("5: Toon alle voertuigen gehuurd door persoon x")
+    print("6: Toon alle personen die voertuig x huurde")
     print("x: terug naar hoofdmenu")
 
 def toon_menu_crud():
@@ -80,6 +82,10 @@ def functies_toon_menu():
             toon_alle_verhuringen()
         elif invoer == "4":
             toon_verhuringen_prijzen()
+        elif invoer == "5":
+            toon_voertuigen_gehuurd_door()
+        elif invoer == "6":
+            toon_persoon_gehuurd()
         elif invoer == "x":
             toon_menu()
             break
@@ -106,7 +112,6 @@ def functies_crud_menu():
             toon_menu()
             break
         invoer = input("geef een nieuwe invoer het de crud opties")
-
 def toon_verhuringen_prijzen():
     prijzen = []
     for verhuur in lijst_verhuringen:
@@ -137,7 +142,24 @@ def sorteer_op_merk():
 def sorteer_op_bouwjaar():
     lijst_voertuigen.sort(key=lambda x:x.bouwjaar)
     toon_alle_voertuigen()
-
+def toon_voertuigen_gehuurd_door():
+    toon_alle_personen()
+    filter_voertuigen_persoon = []
+    persoon_id = input("geef het id van de person")
+    for verhuring in lijst_verhuringen:
+        if persoon_id == verhuring.persoon.id:
+            filter_voertuigen_persoon.append(verhuring)
+    for voertuig in filter_voertuigen_persoon:
+        print(voertuig)
+def toon_persoon_gehuurd():
+    toon_alle_voertuigen()
+    voertuig_id = input("geef het id")
+    filter_personen = []
+    for verhuring in lijst_verhuringen:
+        if voertuig_id == verhuring.voertuig.id:
+            filter_personen.append(verhuring)
+    for persoon in filter_personen:
+        print(persoon.persoon)
 
 
 

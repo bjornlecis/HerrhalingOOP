@@ -76,10 +76,13 @@ v6 = Auto(65,"Suzuki","Wagon",2004)
 vh1 = Verhuring("ver1",v4,p1,5)
 vh2 = Verhuring("ver2",v5,p2,3)
 vh3 = Verhuring("ver3",v3,p2,4)
+vh4 = Verhuring("ver4",v1,p1,3)
+vh5 = Verhuring("ver5",v6,p2,2)
+vh6 = Verhuring("ver6",v2,p1,3)
 
 lijst_per = [p1,p2]
 lijst_voertuigen = [v1,v2,v3,v4,v5,v6]
-lijst_verhuringen = [vh1,vh2,vh3]
+lijst_verhuringen = [vh1,vh2,vh3,vh4,vh5,vh6]
 
 
 
